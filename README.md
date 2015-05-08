@@ -13,7 +13,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Getting Started
 
-- Clone the repository and open JustDecompileEngine.sln in Microsoft (r) Visual Studio (r).
+- Clone the repository and open JustDecompileEngine.sln in Microsoft® Visual Studio®.
 - Set your startup project to ConsoleRunner.
 - Enjoy
 
