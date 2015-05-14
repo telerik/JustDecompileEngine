@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -149,9 +150,9 @@ namespace JustDecompileCmdShell
             MSBuildProjectBuilder projectBuilder = GetProjectBuilder(assembly, projectInfo, settings, projectInfo.Language, projFilePath, preferences, frameworkResolver);
             ConfigurateProjectBuilder(projectBuilder);
 
-            DateTime startTime = DateTime.Now;
+            Stopwatch stopwatch = Stopwatch.StartNew();
             projectBuilder.BuildProject();
-            TimeSpan projectGenerationTime = DateTime.Now - startTime;
+            TimeSpan projectGenerationTime = stopwatch.Elapsed;
             return projectGenerationTime;
         }
 
