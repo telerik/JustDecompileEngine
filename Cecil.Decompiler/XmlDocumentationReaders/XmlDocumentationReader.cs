@@ -60,7 +60,7 @@ namespace Telerik.JustDecompiler.XmlDocumentationReaders
 							}
 						}
 					}
-					catch (XmlException e)
+					catch (XmlException)
 					{ 
 						// the XML file containing the documentation is corrupt. 
 						return new Dictionary<string,string>();
