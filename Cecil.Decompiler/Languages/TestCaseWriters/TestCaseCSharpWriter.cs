@@ -38,7 +38,7 @@ namespace Telerik.JustDecompiler.Languages.TestCaseWriters
 			return base.IsTypeNameInCollision(typeName);
 		}
 
-		public void WriteMethodDeclaration(MethodDefinition method, bool writeDocumentation = false)
+		new public void WriteMethodDeclaration(MethodDefinition method, bool writeDocumentation = false)
 		{
 			/// this is an entry point method
 			this.currentWritingInfo = new WritingInfo(method);
@@ -75,12 +75,12 @@ namespace Telerik.JustDecompiler.Languages.TestCaseWriters
 			return (writerContext == null || writerContext.ModuleContext.Module == null) ? @event.Name : base.GetEventName(@event);
 		}
 
-		public void Write(Statement statement)
+		new public void Write(Statement statement)
 		{
 			base.Write(statement);
 		}
 
-		public void Write(Expression expression)
+		new public void Write(Expression expression)
 		{
 			base.Write(expression);
 		}

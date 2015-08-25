@@ -53,7 +53,7 @@ namespace Telerik.JustDecompiler.Languages
         protected WritingInfo currentWritingInfo;
         protected List<WritingInfo> writingInfos;
 
-        public ILanguage Language { get; private set; }
+        new public ILanguage Language { get; private set; }
 
         public BaseLanguageWriter(ILanguage language, IFormatter formatter, IExceptionFormatter exceptionFormatter, bool writeExceptionsAsComments)
         {
