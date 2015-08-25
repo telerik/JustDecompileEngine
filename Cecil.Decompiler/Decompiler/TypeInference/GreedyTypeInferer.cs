@@ -17,7 +17,7 @@ namespace Telerik.JustDecompiler.Decompiler.TypeInference
             this.resolvedVariables = new HashSet<VariableReference>();
         }
 
-        public HashSet<VariableReference> InferTypes()
+        new public HashSet<VariableReference> InferTypes()
         {
             resolvedVariables = new HashSet<VariableReference>();
             bool fixedVar = false;
