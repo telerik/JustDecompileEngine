@@ -1,2 +1,2 @@
-
-
+build_script:
+  appveyor-build.bat
