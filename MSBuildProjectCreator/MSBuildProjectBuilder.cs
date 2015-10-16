@@ -413,7 +413,7 @@ namespace JustDecompile.Tools.MSBuildProjectBuilder
                         }
                     });
             }
-            catch (OperationCanceledException e)
+            catch (OperationCanceledException)
             {
             }
 #else
@@ -588,7 +588,7 @@ namespace JustDecompile.Tools.MSBuildProjectBuilder
                     {
 						solutionFileCreated = WriteSolutionFile();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         exceptionWhileWritingSolutionFile = true;
                     }

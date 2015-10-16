@@ -36,8 +36,8 @@ namespace Telerik.JustDecompiler.Languages.CSharp
 {
     public class CSharp : BaseLanguage
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
         private static Dictionary<string, string> operators;
 
         public override bool IsGlobalKeyword(string word)
@@ -201,8 +201,8 @@ namespace Telerik.JustDecompiler.Languages.CSharp
 
     public class CSharpV1 : CSharp
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static CSharpV1()
         {
@@ -376,8 +376,8 @@ namespace Telerik.JustDecompiler.Languages.CSharp
 
     public class CSharpV2 : CSharpV1
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static CSharpV2()
         {
@@ -406,8 +406,8 @@ namespace Telerik.JustDecompiler.Languages.CSharp
 
     public class CSharpV3 : CSharpV2
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static CSharpV3()
         {
@@ -436,8 +436,8 @@ namespace Telerik.JustDecompiler.Languages.CSharp
 
     public class CSharpV4 : CSharpV3
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static CSharpV4()
         {

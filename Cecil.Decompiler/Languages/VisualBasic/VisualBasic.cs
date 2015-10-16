@@ -36,8 +36,8 @@ namespace Telerik.JustDecompiler.Languages.VisualBasic
 {
     public class VisualBasic : BaseLanguage
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
         private static Dictionary<string, string> operators;
 		private static HashSet<string> operatorKeywords;
 
@@ -320,8 +320,8 @@ namespace Telerik.JustDecompiler.Languages.VisualBasic
 
     public class VisualBasicV1 : VisualBasic
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static VisualBasicV1()
         {
@@ -479,8 +479,8 @@ namespace Telerik.JustDecompiler.Languages.VisualBasic
 
     public class VisualBasicV2 : VisualBasicV1
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static VisualBasicV2()
         {
@@ -504,8 +504,8 @@ namespace Telerik.JustDecompiler.Languages.VisualBasic
 
     public class VisualBasicV3 : VisualBasicV2
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static VisualBasicV3()
         {
@@ -529,8 +529,8 @@ namespace Telerik.JustDecompiler.Languages.VisualBasic
 
     public class VisualBasicV4 : VisualBasicV3
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         static VisualBasicV4()
         {

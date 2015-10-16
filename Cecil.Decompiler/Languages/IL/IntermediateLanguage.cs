@@ -32,8 +32,8 @@ namespace Telerik.JustDecompiler.Languages.IL
 {
     public class IntermediateLanguage : BaseLanguage
     {
-        protected static HashSet<string> languageSpecificGlobalKeywords;
-        protected static HashSet<string> languageSpecificContextualKeywords;
+        new protected static HashSet<string> languageSpecificGlobalKeywords;
+        new protected static HashSet<string> languageSpecificContextualKeywords;
 
         public override bool IsGlobalKeyword(string word)
         {

@@ -99,7 +99,7 @@ namespace JustDecompile.EngineInfrastructure
                 }
                 return MachineType.CLR;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return MachineType.Unknown;
             }

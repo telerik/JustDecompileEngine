@@ -1,4 +1,5 @@
 # JustDecompile Engine
+[![Build status](https://ci.appveyor.com/api/projects/status/parm0e26xbjajl1w?svg=true)](https://ci.appveyor.com/project/mark2011/justdecompileengine/branch/appveyor)
 
 This is the engine of the popular .NET decompiler [JustDecompile](http://www.telerik.com/products/decompiler.aspx). C# is the only programming language used.
 

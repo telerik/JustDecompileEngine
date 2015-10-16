@@ -42,7 +42,7 @@ namespace Telerik.JustDecompiler.Decompiler.WriterContextServices
 
 		public TypeDeclarationsWriterContextService(bool renameInvalidMembers) : base(null, renameInvalidMembers) { }
 
-		public bool ExceptionsWhileDecompiling
+		new public bool ExceptionsWhileDecompiling
 		{
 			get
 			{
