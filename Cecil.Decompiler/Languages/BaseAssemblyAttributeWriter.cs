@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Mono.Cecil;
 using Telerik.JustDecompiler.Decompiler;
 using Telerik.JustDecompiler.Decompiler.WriterContextServices;
@@ -71,7 +69,7 @@ namespace Telerik.JustDecompiler.Languages
 		public virtual void WriteAssemblyAttributesInternal(AssemblyDefinition assembly, ICollection<string> assemblyNamespaceUsings,
 			ICollection<string> mainModuleNamespaceUsings, bool writeUsings = false, ICollection<string> attributesToIgnore = null)
 		{
-			if (writeUsings && (assemblyNamespaceUsings.Count() > 0 || mainModuleNamespaceUsings.Count() > 0))
+			if (writeUsings && (assemblyNamespaceUsings.Count > 0 || mainModuleNamespaceUsings.Count > 0))
 			{
 				Writer.WriteAssemblyUsings();
 				Writer.WriteLine();
@@ -95,7 +93,7 @@ namespace Telerik.JustDecompiler.Languages
 
 		public virtual void WriteModuleAttributesInternal(ModuleDefinition module, ICollection<string> moduleNamespaceUsings, bool writeUsings = false, ICollection<string> attributesToIgnore = null)
 		{
-			if (writeUsings && moduleNamespaceUsings.Count() > 0)
+			if (writeUsings && moduleNamespaceUsings.Count > 0)
 			{
 				Writer.WriteModuleUsings();
 				Writer.WriteLine();
@@ -121,7 +119,7 @@ namespace Telerik.JustDecompiler.Languages
 		private void WriteAssemblyInfoInternal(AssemblyDefinition assembly, ICollection<string> assemblyNamespaceUsings,
 			ICollection<string> mainModuleNamespaceUsings, bool writeUsings = false, ICollection<string> assemblyAttributesToIgnore = null, ICollection<string> moduleAttributesToIgnore = null)
 		{
-			if (writeUsings && (assemblyNamespaceUsings.Count() > 0 || mainModuleNamespaceUsings.Count() > 0))
+			if (writeUsings && (assemblyNamespaceUsings.Count > 0 || mainModuleNamespaceUsings.Count > 0))
 			{
 				Writer.WriteAssemblyAndModuleUsings();
 				Writer.WriteLine();

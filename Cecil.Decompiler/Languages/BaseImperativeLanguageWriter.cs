@@ -1943,7 +1943,7 @@ namespace Telerik.JustDecompiler.Languages
 		protected string GetParameterName(ParameterDefinition parameter)
 		{
 			string paramName = parameter.Name;
-			if (MethodContext != null && (MethodContext.Method.Body.Instructions.Count() > 0 || MethodContext.Method.IsJustDecompileGenerated) && MethodContext.Method == parameter.Method) // this check should be removed once the context is maintained in correct state
+			if (MethodContext != null && (MethodContext.Method.Body.Instructions.Count > 0 || MethodContext.Method.IsJustDecompileGenerated) && MethodContext.Method == parameter.Method) // this check should be removed once the context is maintained in correct state
 			{
 				if (!MethodContext.ParameterDefinitionToNameMap.TryGetValue(parameter, out paramName))
 				{
@@ -2825,7 +2825,7 @@ namespace Telerik.JustDecompiler.Languages
 			string currentNamespace = TypeContext.CurrentType.Namespace;
 			string[] currentNamespaceParts = currentNamespace.Split('.');
 
-			if (currentNamespaceParts.Count() > 0)
+			if (currentNamespaceParts.Length > 0)
 			{
 				StringBuilder parentNamespaceBuilder = new StringBuilder();
 
@@ -2865,7 +2865,7 @@ namespace Telerik.JustDecompiler.Languages
 			string currentNamespace = TypeContext.CurrentType.Namespace;
 			string[] currentNamespaceParts = currentNamespace.Split('.');
 
-			if (currentNamespaceParts.Count() > 0)
+			if (currentNamespaceParts.Length > 0)
 			{
 				StringBuilder parentNamespaceBuilder = new StringBuilder();
 
