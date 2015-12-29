@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Telerik.JustDecompiler.Cil
 {
@@ -28,7 +27,7 @@ namespace Telerik.JustDecompiler.Cil
 				return;
 			}
 
-			if (mostDistantSuccessor.Index == cfg.Blocks.Count() - 1)
+			if (mostDistantSuccessor.Index == cfg.Blocks.Length - 1)
 			{
 				return;
 			}

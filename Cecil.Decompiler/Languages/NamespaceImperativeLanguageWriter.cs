@@ -61,7 +61,7 @@ namespace Telerik.JustDecompiler.Languages
 			this.writeFullyQualifiedNames = writeFullyQualifiedNames;
 			this.currentNamespace = GetCurrentNamespace(type);
 
-			if (TypeContext.UsedNamespaces.Count() > 0)
+			if (TypeContext.UsedNamespaces.Count > 0)
 			{
 				WriteUsings(TypeContext.UsedNamespaces);
 				WriteLine();
@@ -111,7 +111,7 @@ namespace Telerik.JustDecompiler.Languages
 				typeFieldsToSkip = fieldsToSkip[type.FullName];
 			}
 
-			if (TypeContext.UsedNamespaces.Count() > 0)
+			if (TypeContext.UsedNamespaces.Count > 0)
 			{
 				WriteUsings(TypeContext.UsedNamespaces);
 				WriteLine();
