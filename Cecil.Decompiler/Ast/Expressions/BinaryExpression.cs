@@ -664,6 +664,7 @@ namespace Telerik.JustDecompiler.Ast.Expressions
                     return 6;
                 case "System.Int64":
                     return 7;
+                case "System.UIntPtr":
                 case "System.UInt64":
                     return 8;
                 case "System.Single":
