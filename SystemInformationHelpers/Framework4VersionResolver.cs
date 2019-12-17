@@ -81,6 +81,11 @@ namespace SystemInformationHelpers
             {
                 if (!installedFramework4Version.HasValue)
                 {
+                    if ((int) Environment.OSVersion.Platform >= 4)
+                    {
+                        installedFramework4Version = GetFrameworkVersionByFileVersion(GetCLRDefault32MscorlibPath());
+                        return installedFramework4Version.Value;
+                    }
                     try
                     {
                         RegistryKey ndpKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32)
