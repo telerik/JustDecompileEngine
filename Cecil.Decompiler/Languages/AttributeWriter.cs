@@ -779,7 +779,7 @@ namespace Telerik.JustDecompiler.Languages
             }
             else
             {
-                if (argument.Type.Name != "Type" || argument.Type.Namespace != "System")
+                if (argument.Value == null || argument.Type.Name != "Type" || argument.Type.Namespace != "System")
                 {
                     genericWriter.WriteLiteralInLanguageSyntax(argument.Value);
                 }
