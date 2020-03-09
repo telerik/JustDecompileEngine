@@ -417,7 +417,7 @@ namespace JustDecompileCmdShell
 
             WriteLine("[/target:]  The target assembly file path.");
 
-            WriteLine("[/out:]     The output directory.");
+            WriteLine("[/out:]     The output directory's parent. The generated project will be output in a sub-folder with the same name as the target assembly, without extension.");
 
             WriteLine("[/lang:]    [/lang:" + CSharpLanguage + "]. The language of the generated project.");
             Console.CursorLeft = 12;
