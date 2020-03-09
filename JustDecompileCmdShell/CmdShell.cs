@@ -1,18 +1,14 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using JustDecompile.Tools.MSBuildProjectBuilder;
 using JustDecompileCmd;
 using Telerik.JustDecompiler.External;
-using Telerik.JustDecompiler.Languages.CSharp;
 using Telerik.JustDecompiler.Languages;
 using Telerik.JustDecompiler.External.Interfaces;
 using Mono.Cecil;
 using Mono.Cecil.AssemblyResolver;
 using JustDecompile.EngineInfrastructure;
-using Telerik.JustDecompiler.Languages.VisualBasic;
-using System.Collections.Generic;
 using JustDecompile.Tools.MSBuildProjectBuilder.NetCore;
 
 namespace JustDecompileCmdShell
@@ -21,7 +17,7 @@ namespace JustDecompileCmdShell
     {
         private static readonly string description = "[--- Copyright (c) 2011-2019 Progress Software Corporation and/or one of its subsidiaries or affiliates. All rights reserved. ---]";
         private static uint count = 0;
-
+        private string outputFolder;
         public event EventHandler<AssemblyDefinition> ProjectGenerationStarted;
 
         public virtual void Run(GeneratorProjectInfo projectInfo)
@@ -52,6 +48,8 @@ namespace JustDecompileCmdShell
                 {
                     try
                     {
+                        // Setting the output folder to a sub-folder of the out parameter, named after the target assembly, as per issue #37
+                        outputFolder = Path.Combine(projectInfo.Out, Path.GetFileNameWithoutExtension(projectInfo.Target));
                         this.CreateOutputDirectory(projectInfo);
                     }
                     catch (Exception ex)
@@ -73,7 +71,7 @@ namespace JustDecompileCmdShell
                     CommandLineManager.WriteLine();
 
                     CommandLineManager.WriteLineColor(ConsoleColor.White, description);
-                    CommandLineManager.WriteLineColor(ConsoleColor.White, new string(Enumerable.Range(0, description.Length).Select(i => '=').ToArray()));
+                    CommandLineManager.WriteLineColor(ConsoleColor.White, new string(Enumerable.Repeat('=', description.Length).ToArray()));
                     Console.WriteLine();
                     Console.WriteLine("Generates MS Visual Studio(r) Project from .NET assembly.");
                     CommandLineManager.WriteLine();
@@ -152,7 +150,7 @@ namespace JustDecompileCmdShell
         {
             OnProjectGenerationStarted(assembly);
 
-            string projFilePath = Path.Combine(projectInfo.Out, Path.GetFileNameWithoutExtension(projectInfo.Target) + projectInfo.Language.VSProjectFileExtension + (settings.JustDecompileSupportedProjectType ? string.Empty : MSBuildProjectBuilder.ErrorFileExtension));
+            string projFilePath = Path.Combine(outputFolder, Path.GetFileNameWithoutExtension(projectInfo.Target) + projectInfo.Language.VSProjectFileExtension + (settings.JustDecompileSupportedProjectType ? string.Empty : MSBuildProjectBuilder.ErrorFileExtension));
 
             DecompilationPreferences preferences = new DecompilationPreferences();
             preferences.WriteFullNames = false;
@@ -179,7 +177,7 @@ namespace JustDecompileCmdShell
 
         protected void CreateOutputDirectory(GeneratorProjectInfo projectInfo)
         {
-            Directory.CreateDirectory(projectInfo.Out);
+            Directory.CreateDirectory(outputFolder);
         }
 
         private BaseProjectBuilder GetProjectBuilder(AssemblyDefinition assembly, GeneratorProjectInfo projectInfo, ProjectGenerationSettings settings, ILanguage language, string projFilePath, DecompilationPreferences preferences, IFrameworkResolver frameworkResolver, ITargetPlatformResolver targetPlatformResolver)
